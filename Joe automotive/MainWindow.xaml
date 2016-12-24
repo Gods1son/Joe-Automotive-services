@@ -1,0 +1,45 @@
+﻿<Window x:Class="Joe_automotive.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Joe_automotive"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525" Background="Azure">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Name="lblJoe" Content="JOE AUTOMOTIVE SERVICES" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+        <CheckBox Name="cbOilChange" Content="Oil Change" Grid.Row="1" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding OilChange,Mode=TwoWay}"/>
+        <CheckBox Name="cbLubeChange" Content="Lube Change" Grid.Row="2" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding LubeChange,Mode=TwoWay}"/>
+        <CheckBox Name="cbRadiator" Content="Radiator Flush" Grid.Row="3" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding Radiator,Mode=TwoWay}"/>
+        <CheckBox Name="cbTransmission" Content="Transmission Flush" Grid.Row="4" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding Transmission,Mode=TwoWay}"/>
+        <CheckBox Name="cbInspection" Content="Inspection" Grid.Row="5" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding Inspection,Mode=TwoWay}"/>
+        <CheckBox Name="cbMuffler" Content="Muffler Replacement" Grid.Row="6" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding Muffler,Mode=TwoWay}"/>
+        <CheckBox Name="cbTire" Content="Tire Rotation" Grid.Row="7" FontSize="23" VerticalContentAlignment="Center" IsChecked="{Binding Tire,Mode=TwoWay}"/>
+        <Button Name="btnCalc" Content="Calculate" Grid.Row="9" Grid.Column="1" FontSize="23" Margin="10,0" Click="btnCalc_Click"/>
+        <Button Name="btnClear" Content="Clear" Grid.Row="9" FontSize="23" Margin="10,0" Click="btnClear_Click"/>
+        <Label Name="lblPart" Content="Enter Part Price($) Below:" Grid.Column="1" Grid.Row="1" FontSize="22"/>
+        <TextBox Name="tbPart" Text="{Binding PartPrice,Mode=TwoWay,StringFormat=c}" Grid.Column="1" Grid.Row="2" TextAlignment="Right" Margin="10,3" FontSize="23"/>
+        <Label Name="lbHours" Content="Enter hours worked below:" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+        <TextBox Name="tbHours" Text="{Binding Hours,Mode=TwoWay,StringFormat=N2}" Grid.Column="1" Grid.Row="4" TextAlignment="Right" Margin="10,3" FontSize="23"/>
+        <Label Name="lblTax" Content="Amount of Tax Below:" Grid.Column="1" Grid.Row="5" FontSize="22"/>
+        <TextBlock Name="tblTax" Text="{Binding Tax,StringFormat=c}" FontSize="23" Grid.Column="1" Grid.Row="6" Margin="10,3" TextAlignment="Right" Background="WhiteSmoke"/>
+        <Label Name="lblTotal" Content="Cost of Service Below:" FontSize="23" Grid.Column="1" Grid.Row="7"/>
+        <TextBlock Name="tblCost" Text="{Binding Cost,StringFormat=c}" Grid.Column="1" Grid.Row="8" FontSize="23" Margin="10,3" TextAlignment="Right" Background="WhiteSmoke"/>
+    </Grid>
+</Window>
